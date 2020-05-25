@@ -1,0 +1,39 @@
+﻿@model List<HW26__23_05_2020.Models.Person>
+@{
+    ViewData["Title"] = "Person selected by id";
+}
+
+<h4 class="text-info">SelectPersonById</h4>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>MiddleName</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.MiddleName</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td class="text-center" colspan="5">empty</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
